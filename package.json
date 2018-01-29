@@ -1,0 +1,23 @@
+{
+	"name": "project2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon -e html,css,js index.js",
+		"debugging": "DEBUG=*:* npm run dev"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.17.1",
+		"body-parser": "^1.18.2",
+		"debug": "^3.1.0",
+		"express": "^4.16.2",
+		"moment": "^2.20.1",
+		"morgan": "^1.9.0",
+		"mustache-express": "^1.2.5",
+		"pg-promise": "^7.4.1"
+	}
+}
