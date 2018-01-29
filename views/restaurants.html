@@ -1,4 +1,3 @@
-This is the restaurants page.
 <!DOCTYPE html>
 <html>
 
@@ -6,14 +5,36 @@ This is the restaurants page.
     <title></title>
     <script src="../jquery.js"></script>
     <script src="../script.js"></script>
-    <link rel='stylesheet' type='text/css' href='../public/style.css'>
+    <link rel='stylesheet' type='text/css' href='../style.css'>
 </head>
 
 <body>
-    {{#allRestaurantsData.location_suggestions}}
-    <h1>{{name}}</h1> {{/allRestaurantsData.location_suggestions}}
+    {{#allRestaurantsData.restaurants}}
+    <h1>{{restaurant.name}}</h1>
+    <div>
+        <img id="image" src="{{restaurant.featured_image}}" width='500' height='300'>
+    </div>
+    <div>
+        <ul>
+            <li>Address :{{ restaurant.location.address}}</li>
+            <li> {{restaurant.location.locality}}</li>
+            <li>{{restaurant.location.city}}</li>
+            <li>{{restaurant.location.zip}}</li>
+        </ul>
+    </div>
+    {{/allRestaurantsData.restaurants}}
     <div>
     </div>
 </body>
+<!-- <body>
+    {{#allRestaurantsData.location_suggestions}}
+    <h1>{{restaurant.name}}</h1>
+    <div id="image">
+        {{entity_id}}
+    </div>
+    {{/allRestaurantsData.location_suggestions}}
+    <div>
+    </div>
+</body> -->
 
 </html>

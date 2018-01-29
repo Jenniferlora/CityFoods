@@ -1,6 +1,5 @@
 // Setup for pg promise
 const pgp = require("pg-promise")();
-const axios = require("axios")();
 // configuration object
 const cn = {
 	host: "localhost",

@@ -17,6 +17,10 @@ h1 {
   font-weight: light;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .container {
   display: -webkit-flex;
   display: -ms-flex;

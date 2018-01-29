@@ -11,7 +11,10 @@ const restaurantsModel = {};
 restaurantsModel.allRestaurants = (req, res, next) => {
 	axios({
 		headers: { "user-key": "a3659cdf82849e643754187ab2abd25c" },
-		url: "https://developers.zomato.com/api/v2.1/cities?q=new%20york",
+		url: `https://developers.zomato.com/api/v2.1/search?entity_id=${
+			req.query.cityId
+		}&entity_type=city&sort=rating`,
+
 		method: "get"
 	})
 		.then(response => {
@@ -22,7 +25,35 @@ restaurantsModel.allRestaurants = (req, res, next) => {
 			next();
 		})
 		.catch(err => {
-			console.log("error encountered in Trains.allTrains. error: ", err);
+			console.log(
+				"error encountered in restaurantsModel.allRestaurants. error: ",
+				err
+			);
+		});
+};
+
+restaurantsModel.allCities = (req, res, next) => {
+	axios({
+		headers: { "user-key": "a3659cdf82849e643754187ab2abd25c" },
+		url: `https://developers.zomato.com/api/v2.1/locations?query=${
+			req.query.city
+		}`,
+		method: "get"
+	})
+		.then(response => {
+			// store the data we got back from the
+			// server in res.locals, and then
+			// call next()
+			res.locals.allCitiesData = response.data;
+			cityId: res.locals.allCitiesData.location_suggestions.id;
+
+			next();
+		})
+		.catch(err => {
+			console.log(
+				"error encountered in restaurantsModel.allCities. error: ",
+				err
+			);
 		});
 };
 
