@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    {{#allRestaurantsData.restaurants}}
+    {{#allRestaurantsData}}
     <h1>{{restaurant.name}}</h1>
     <div>
-        <img id="image" src="{{restaurant.featured_image}}" width='500' height='300'>
+        <img id="image" src="{{restaurant.featured_image}}" width='500' height='300' alt="picture unavailable">
     </div>
     <div>
         <ul>
@@ -22,19 +22,9 @@
             <li>{{restaurant.location.zip}}</li>
         </ul>
     </div>
-    {{/allRestaurantsData.restaurants}}
+    {{/allRestaurantsData}}
     <div>
     </div>
 </body>
-<!-- <body>
-    {{#allRestaurantsData.location_suggestions}}
-    <h1>{{restaurant.name}}</h1>
-    <div id="image">
-        {{entity_id}}
-    </div>
-    {{/allRestaurantsData.location_suggestions}}
-    <div>
-    </div>
-</body> -->
 
 </html>

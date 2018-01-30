@@ -5,5 +5,5 @@
 const restaurantsModel = require("../models/restaurants");
 const scripts = require("../public/script");
 
-scripts.seedAllRestaurantsNames();
-restaurantsModel.seedAllRestaurantsNames();
+scripts.restaurantsNameSeedStep();
+restaurantsModel.restaurantsNameSeedStep();
