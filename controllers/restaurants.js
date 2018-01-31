@@ -13,4 +13,18 @@ router.get("/", (req, res, next) => {
 	res.render("main");
 });
 
+router.post("/restaurants", restaurantsModel.create, (req, res, next) => {
+	console.log("From post controller");
+});
+
+router.get("/dinelist", restaurantsModel.addedlist, (req, res, next) => {
+	console.log("hitting dinelist/");
+	res.render("dinelist", { listdata: res.locals.allFromList });
+});
+
+router.delete("/dinelist/:id", restaurantsModel.destroy, (req, res, next) => {
+	res.json({ id: req.params.id });
+});
+// put  - update
+// destroy - delete
 module.exports = router;

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="../jquery.js"></script>
+    <script src="../script.js"></script>
+    <link rel='stylesheet' type='text/css' href='../style.css'>
+</head>
+
+<body>
+    <h1> Dine list</h1> {{#listdata}}
+    <ul>
+        <li>{{name}} {{city}}
+            <form>
+                <input id="delete" name="delete" value="delete" type="button">
+                </button>
+                <!-- <button name="update" type="text">Update </button> -->
+                <input id="res_id" type="hidden" name="id" value="{{id}}">
+            </form>
+        </li>
+    </ul>
+    {{/listdata}}
+</body>
+
+</html>

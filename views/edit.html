@@ -9,32 +9,26 @@
 </head>
 
 <body>
-    {{#allRestaurantsData}}
-    <h1> <a href="restaurants/:id"> {{restaurant.name}} </a></h1>
-    <img src="../likebutton.png">
+    <h1>{{name}}</h1>
     <div>
         <img id="image" src="{{restaurant.featured_image}}" width='500' height='300' alt="picture unavailable">
     </div>
     <div>
         <ul>
-            <li>Address :{{ restaurant.location.address}}</li>
+            <li>{{{cuisines}}}</li>
             <li> {{restaurant.location.locality}}</li>
             <li>{{restaurant.location.city}}</li>
             <li>{{restaurant.location.zip}}</li>
         </ul>
-        <div id="comments">
-        </div>
-        <form action="/restaurants" method="post">
+        <form action="/restaurant" method="post">
             <input type="hidden" name="restaurant_id" value={{restaurant.id}}>
             <input type="hidden" name="restaurant_name" value={{restaurant.name}}>
             <input type="hidden" name="restaurant_city" value={{restaurant.location.city}}>
             <button type="submit ">Save</button>
         </form>
     </div>
-    {{/allRestaurantsData}}
     <div>
     </div>
-    <a href="/dinelist"> Go to my list.</a>
 </body>
 
 </html>

@@ -2,8 +2,8 @@
 // use JavaScript... and that JavaScript can use our model.
 
 // We'll use the pokemonModel.
-const restaurantsModel = require("../models/restaurants");
-const scripts = require("../public/script");
+// const restaurantsModel = require("../models/restaurants");
+// const scripts = require("../public/script");
 
-scripts.restaurantsNameSeedStep();
-restaurantsModel.restaurantsNameSeedStep();
+// scripts.restaurantsNameSeedStep();
+// restaurantsModel.restaurantsNameSeedStep();

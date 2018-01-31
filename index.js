@@ -16,6 +16,7 @@ app.engine("html", mustacheExpress());
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/images"));
 
 // morgan setup
 app.use(morgan("dev"));
