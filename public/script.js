@@ -2,7 +2,7 @@
 // This function is getting the zip code from the input fields and calculating the latitude and longitud.
 
 $(function() {
-	delete button;
+	// delete button;
 	$("#delete").click(function(e) {
 		// selecting the restaurant's id from hidden input
 		e.preventDefault();
@@ -28,4 +28,50 @@ $(function() {
 			});
 		}
 	});
-}); // ends doc.ready
+
+	$("#comment").click(function(e) {
+		//create comment function
+		e.preventDefault();
+		const new_comment = $("#text_comment").val();
+		const res_id = $("#text_comment").data("res-id");
+		const author_name = $("#author").val();
+		const data = { comment: new_comment, author: author_name };
+		console.log(new_comment, res_id);
+		$.ajax({
+			url: `/dinelist/${res_id}`, // Path
+			type: "POST",
+			data: data,
+			success: function(data) {
+				console.log("added", comment);
+				window.location.href = "/dinelist";
+			},
+			error: function(xhr, status, error) {}
+		});
+	});
+
+	$(".comments").click(function(e) {
+		//create comment function
+		e.preventDefault();
+		const res_id = $(this).data("res-id");
+		$.ajax({
+			url: `/dinelist/${res_id}/comments`, // Path
+			type: "GET",
+
+			success: function(data) {
+				console.log("added", data);
+
+				data.comments.forEach(function(comment) {
+					console.log(comment.comment);
+					var commentSpace = $("<input>").attr({
+						type: "text",
+						data: `${res_id}`,
+						value: `${comment.comment}`
+					});
+					$(`#${res_id}`).append(commentSpace);
+				});
+			},
+			error: function(xhr, status, error) {}
+		});
+	});
+});
+// ends doc.ready

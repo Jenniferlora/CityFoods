@@ -64,10 +64,19 @@ button {
   border-radius: 5px;
 }
 
+details {
+  list-style-type: none;
+}
+
 button {
   background-color: aliceblue;
 }
 
 button:hover {
   background-color: gold;
+}
+
+#editimg {
+  width: 20px;
+  height: 20px;
 }

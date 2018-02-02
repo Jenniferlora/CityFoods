@@ -9,15 +9,28 @@
 </head>
 
 <body>
-    <h1> Dine list</h1> {{#listdata}}
+    <h1> Dine list</h1> {{time}}
     <ul>
+        {{#listdata}}
         <li>{{name}} {{city}}
             <form>
                 <input id="delete" name="delete" value="delete" type="button">
-                </button>
-                <!-- <button name="update" type="text">Update </button> -->
                 <input id="res_id" type="hidden" name="id" value="{{id}}">
+                <!-- <input id="update" name="delete" value="update" type="button">
+<input id="update_id" type="hidden" name="id" value="{{id}}"> -->
             </form>
+            <details>
+                <summary>Add a Review<img id="editimg" src="../edit.png"></summary>
+                <form>
+                    <!-- <label>Add a Review</label> -->
+                    </br>
+                    <input id="author" type="text" placeholder="name">
+                    <textarea id="text_comment" data-res-id={{res_id}} name="comment" cols="50" rows="5"></textarea>
+                    <input id="comment" method="post" type="button" value="submit">
+                    <input id="comment_p" type="hidden" name="id" value="{{id}}">
+                </form>
+            </details>
+            <button class="comments" data-res-id={{res_id}}> View Comments</button>
         </li>
     </ul>
     {{/listdata}}

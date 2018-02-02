@@ -6,8 +6,13 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "nodemon -e html,css,js index.js",
-		"debugging": "DEBUG=*:* npm run dev"
+		"debugging": "DEBUG=*:* npm run dev",
+		"start": "index.js"
 	},
+	"engines": {
+		"node": "7.0.0" // put YOUR version of node here, in this format
+	},
+
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
