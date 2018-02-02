@@ -1,7 +1,6 @@
 * {
-  font-family: sans-serif;
-  color: darkslateblue;
-  font-family: "Quicksand", sans-serif;
+  font-family: helvetica;
+  color: darkblue;
 }
 
 body,
@@ -13,70 +12,44 @@ html {
 
 h1 {
   color: white;
-  font-size: 4em;
+  font-size: 40px;
   font-weight: light;
+}
+
+h2 {
+  color: white;
+  font-size: 32px;
+}
+
+h3 {
+  color: white;
+  font-size: 28px;
 }
 
 ul {
   list-style-type: none;
 }
 
-.container {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background-color: ghostwhite;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  min-height: 100px;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-}
-
-.search-container {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-align-items: center;
-  align-items: center;
-}
-
 input,
 button {
-  font-size: 1em;
-  padding: 7px;
+  font-size: 20px;
+  padding: 5px;
   margin: 0 0 0 10px;
-  border: 1px solid darkslateblue;
-  border-radius: 5px;
+  border: 1px solid darkblue;
+  border-radius: 4px;
 }
 
 details {
   list-style-type: none;
 }
 
-button {
-  background-color: aliceblue;
-}
-
-button:hover {
-  background-color: gold;
-}
-
 #editimg {
   width: 20px;
   height: 20px;
+}
+
+.red {
+  font-size: 65px;
+  color: red;
+  letter-spacing: 2px;
 }

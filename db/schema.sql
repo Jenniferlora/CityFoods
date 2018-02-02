@@ -18,5 +18,3 @@ CREATE TABLE comments (
 	author VARCHAR(255)
 
 );
--- create table reviews 
--- references res_id

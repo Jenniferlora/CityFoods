@@ -9,11 +9,12 @@
 </head>
 
 <body>
-    <h1> Dine list</h1> {{time}}
+    <h1 class="red"> City Foods</h1>
+    <h2> Dine list</h2> {{time}}
     <ul>
         {{#listdata}}
         <li>
-            <h1>{{name}}</h1>
+            <h2>{{name}}</h2>
             <h3>{{city}}</h3>
             <form>
                 <input id="delete" name="delete" value="delete" type="button">

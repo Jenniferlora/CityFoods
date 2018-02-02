@@ -68,6 +68,5 @@ router.put("/dinelist/:id", restaurantsModel.update, (req, res, next) => {
 		newcomment: req.params.newcomment
 	});
 });
-// put  - update
-// destroy - delete
+
 module.exports = router;

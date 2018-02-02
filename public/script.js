@@ -1,6 +1,4 @@
 // Using Ajax
-// This function is getting the zip code from the input fields and calculating the latitude and longitud.
-
 $(function() {
 	// delete button;
 	$("#delete").click(function(e) {
@@ -75,8 +73,6 @@ $(function() {
 						name: "_METHOD",
 						value: "PUT"
 					});
-					// <input type="hidden" name="_METHOD" value="PUT"/>
-
 					$(`#${res_id}`).append(commentSpace);
 					$(`#${res_id}`).append(edit);
 				});

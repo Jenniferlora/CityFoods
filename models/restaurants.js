@@ -6,8 +6,6 @@ const axios = require("axios");
 const restaurantsModel = {};
 //----------------------------------------------------
 
-// from the trains example
-// fetch all the trains data from the mta API:  http://www.mtastat.us/api/trains
 restaurantsModel.city = (req, res, next) => {
 	console.log(req.query.city + "hey from restuarantModel.city!!!!!");
 	axios({
@@ -31,8 +29,6 @@ restaurantsModel.city = (req, res, next) => {
 		});
 	// nested api call for entity --> url + response.data.location_suggestion.entity_id
 	function secondCall(response) {
-		// console.log(res.locals.allRestaurantsData);
-		// console.log(response.data);
 		axios({
 			headers: { "user-key": "a3659cdf82849e643754187ab2abd25c" },
 			url: `https://developers.zomato.com/api/v2.1/search?entity_id=${
@@ -45,8 +41,6 @@ restaurantsModel.city = (req, res, next) => {
 				// server in res.locals, and then
 				res.locals.allRestaurantsData = response.data.restaurants;
 				// console.log(res.locals.allRestaurantsData);
-
-				//nested object
 				next();
 			})
 			.catch(err => {
@@ -85,9 +79,6 @@ restaurantsModel.addedlist = (req, res, next) => {
 	console.log(res.locals.allFromList);
 	db
 		.manyOrNone("SELECT id,res_id,name,city FROM restaurants")
-		// .manyOrNone(
-		// 	"SELECT restaurants.id, restaurants.res_id, name, city , comment, author from restaurants JOIN comments ON restaurants.res_id=comments.res_id"
-		// )
 
 		.then(data => {
 			res.locals.allFromList = data;
@@ -189,22 +180,5 @@ restaurantsModel.makeComment = (req, res, next) => {
 			next(err);
 		});
 };
-
-// restaurantsModel.comments = (req, res, next) => {
-// 	console.log("yooooooooooooooooo", res.locals);
-// 	db
-// 		.manyOrNone(
-// 			"SELECT comments.id, comments.res_id, comment, author from comments JOIN restaurants ON restaurants.res_id = comments.res_id",
-// 			[req.params.id, req.params.comment]
-// 		)
-// 		.then(data => {
-// 			res.locals = data;
-// 			next();
-// 		})
-// 		.catch(error => {
-// 			console.log("error in places.findById. Error:", error);
-// 			next(error);
-// 		});
-// };
 
 module.exports = restaurantsModel;
