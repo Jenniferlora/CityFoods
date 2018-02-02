@@ -10,7 +10,7 @@
 		"start": "index.js"
 	},
 	"engines": {
-		"node": "7.0.0" // put YOUR version of node here, in this format
+		"node": "7.0.0"
 	},
 
 	"author": "",
