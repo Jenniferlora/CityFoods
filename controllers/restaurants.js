@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const restaurantsModel = require("../models/restaurants.js");
 var moment = require("moment");
+
 //This is rendering the restaurants page.
 router.get(
 	"/restaurants",
@@ -58,6 +59,13 @@ router.post("/dinelist/:id", restaurantsModel.makeComment, (req, res, next) => {
 		res_id: req.params.res_id,
 		new_comment: req.params.new_comment,
 		author: req.params.author
+	});
+});
+
+router.put("/dinelist/:id", restaurantsModel.update, (req, res, next) => {
+	console.log("in router.put", req.locals.newcomment);
+	res.redirect("dinelist/:id", {
+		newcomment: req.params.newcomment
 	});
 });
 // put  - update

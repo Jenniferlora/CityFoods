@@ -14,8 +14,8 @@ DROP TABLE IF EXISTS comments;
 CREATE TABLE comments (
 	id SERIAL PRIMARY KEY,
   res_id INTEGER REFERENCES restaurants(res_id) ON DELETE CASCADE ON UPDATE CASCADE,
-	comment VARCHAR (255),
-	author VARCHAR (255)
+	comment VARCHAR(255),
+	author VARCHAR(255)
 
 );
 -- create table reviews 

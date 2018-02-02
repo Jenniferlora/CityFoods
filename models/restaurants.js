@@ -118,6 +118,25 @@ restaurantsModel.destroy = (req, res, next) => {
 		});
 };
 
+restaurantsModel.update = (req, res, next) => {
+	console.log(req.params.id);
+	db
+		.manyOrNone(
+			"SELECT comments.id, comments.res_id, comment, author from comments JOIN restaurants ON restaurants.res_id = comments.res_id RETURNING *; "[
+				req.params.id
+			]
+		)
+		.then(data => {
+			console.log(data);
+			res.locals.newcomment = data;
+			next();
+		})
+		.catch(error => {
+			console.log("error encountered in restaurantsModel.update Error:", error);
+			next(error);
+		});
+};
+
 restaurantsModel.findById = (req, res, next) => {
 	console.log(req.params);
 	db
@@ -131,9 +150,8 @@ restaurantsModel.findById = (req, res, next) => {
 			next(error);
 		});
 };
-
 restaurantsModel.comments = (req, res, next) => {
-	console.log(req.params);
+	console.log("yooooooooooooooooo", req.params);
 	db
 		.manyOrNone("SELECT * FROM comments WHERE res_id=$1", [req.params.id])
 		.then(data => {
@@ -171,5 +189,22 @@ restaurantsModel.makeComment = (req, res, next) => {
 			next(err);
 		});
 };
+
+// restaurantsModel.comments = (req, res, next) => {
+// 	console.log("yooooooooooooooooo", res.locals);
+// 	db
+// 		.manyOrNone(
+// 			"SELECT comments.id, comments.res_id, comment, author from comments JOIN restaurants ON restaurants.res_id = comments.res_id",
+// 			[req.params.id, req.params.comment]
+// 		)
+// 		.then(data => {
+// 			res.locals = data;
+// 			next();
+// 		})
+// 		.catch(error => {
+// 			console.log("error in places.findById. Error:", error);
+// 			next(error);
+// 		});
+// };
 
 module.exports = restaurantsModel;

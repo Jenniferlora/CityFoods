@@ -63,15 +63,42 @@ $(function() {
 				data.comments.forEach(function(comment) {
 					console.log(comment.comment);
 					var commentSpace = $("<input>").attr({
+						class: "change",
 						type: "text",
 						data: `${res_id}`,
 						value: `${comment.comment}`
 					});
+					var edit = $("<button>").attr({
+						type: "text",
+						data: `${res_id}`,
+						value: "Edit comment",
+						name: "_METHOD",
+						value: "PUT"
+					});
+					// <input type="hidden" name="_METHOD" value="PUT"/>
+
 					$(`#${res_id}`).append(commentSpace);
+					$(`#${res_id}`).append(edit);
 				});
 			},
 			error: function(xhr, status, error) {}
 		});
+		$(".comments").off("click");
 	});
-});
-// ends doc.ready
+
+	$(".change").change(function(e) {
+		// 	const res_id = $("#text_comment").data("res-id");
+		// const data = { comment: new_comment, author: author_name };
+		console.log(e.target);
+		$.ajax({
+			url: `/dinelist/${res_id}/new_comment`, // Path
+			type: "PUT",
+			data: data,
+			success: function(data) {
+				console.log("added", data);
+				// window.location.href = "/dinelist";
+			},
+			error: function(xhr, status, error) {}
+		});
+	});
+}); // ends doc.ready
