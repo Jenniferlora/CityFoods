@@ -8,9 +8,10 @@
 		"dev": "nodemon -e html,css,js index.js",
 		"debugging": "DEBUG=*:* npm run dev",
 		"start": "index.js"
+
 	},
 	"engines": {
-		"node": "7.0.0"
+		"node": "6.11.5"
 	},
 	"author": "",
 	"license": "ISC",
