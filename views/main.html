@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="main_page">
 
 <head>
     <title></title>
@@ -9,14 +9,17 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="red"> City Foods</h1>
-        <h1>Where are you?</h1>
-    </header>
-    <form action="/restaurants" method="GET">
-        <input type="text" name="city" id="city" placeholder="Enter city name" />
-        <button id="submit">Search</button>
-    </form>
+    <div class="container">
+        <div class="intro">
+            <h1 class="red"> City Foods</h1>
+            <h1 class="subTitle">Where are you?</h1>
+
+            <form action="/restaurants" method="GET">
+                <input type="text" name="city" id="city" placeholder="Enter city name" />
+                <button id="submit">Search</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

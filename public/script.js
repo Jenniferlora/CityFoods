@@ -1,10 +1,11 @@
 // Using Ajax
 $(function() {
+	
 	// delete button;
-	$("#delete").click(function(e) {
+	$(".delete").click(function(e) {
 		// selecting the restaurant's id from hidden input
 		e.preventDefault();
-		const id = $("#res_id").val();
+		const id = $(".res_id").val();
 		console.log(id);
 		console.log(`Deleting id: ${id}`);
 		// Prompt user before deleting
@@ -26,6 +27,7 @@ $(function() {
 			});
 		}
 	});
+
 
 	$("#comment").click(function(e) {
 		//create comment function

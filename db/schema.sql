@@ -1,11 +1,12 @@
 
-DROP TABLE IF EXISTS restaurants;
+DROP TABLE IF EXISTS restaurants CASCADE;
 
-CREATE TABLE restaurants (
+CREATE TABLE restaurants  (
 	id SERIAL PRIMARY KEY,
-	res_id INTEGER UNIQUE ,
+	res_id INTEGER UNIQUE,
 	name VARCHAR(255),
-	city VARCHAR(255)
+	city VARCHAR(255),
+	image VARCHAR(255)
 
 );
 

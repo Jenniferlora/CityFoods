@@ -1,21 +1,30 @@
 * {
   font-family: helvetica;
   color: darkblue;
+  margin:0;
+  padding: 0;
 }
 
-body,
-html {
-  margin: 0 auto;
-  background-color: cornflowerblue;
+#main_page{
   text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1512540519517-eca80b3d5fe3?ixlib=rb-0.3.5&s=b64da7dad9531e87f7c077bc859b483d&auto=format&fit=crop&w=750&q=80");
+  background-size:cover;
+ /* display: flex;*/
 }
 
-h1 {
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subTitle{
   color: white;
   font-size: 40px;
-  font-weight: light;
-}
+  font-weight: lighter;
+  margin:10px;
+  letter-spacing: 1px;
 
+}
 h2 {
   color: white;
   font-size: 32px;
@@ -30,7 +39,7 @@ ul {
   list-style-type: none;
 }
 
-input,
+
 button {
   font-size: 20px;
   padding: 5px;
@@ -42,14 +51,34 @@ button {
 details {
   list-style-type: none;
 }
-
+input{
+  margin:10px 0 10px 0;
+  font-size: 20px;
+  padding: 5px;
+  border: 1px solid darkblue;
+  border-radius: 4px;
+}
 #editimg {
   width: 20px;
   height: 20px;
 }
 
 .red {
-  font-size: 65px;
+  font-size: 80px;
   color: red;
-  letter-spacing: 2px;
+  letter-spacing: 20px;
+  font-weight: 500;
 }
+.container{
+width:100vw;
+background-color: rgba(0,0,0,.5);
+height:100vh;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.img_dine{
+background-image: url("https://www.thelocal.it/userdata/images/article/69523836b0191608c41d640feead8da2be5462038d3409e1e3900fad039c7fc8.jpg");
+}
+

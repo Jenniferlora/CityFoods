@@ -53,11 +53,12 @@ restaurantsModel.create = (req, res, next) => {
 	console.log("from restaurants.Model", req.body);
 	db
 		.manyOrNone(
-			"INSERT INTO restaurants (res_id, name, city) VALUES ($1, $2, $3) RETURNING *;",
+			"INSERT INTO restaurants (res_id, name, city, image) VALUES ($1, $2, $3, $4) RETURNING *;",
 			[
 				req.body.restaurant_id,
 				req.body.restaurant_name,
-				req.body.restaurant_city
+				req.body.restaurant_city,
+				req.body.restaurant_image
 			]
 		)
 		.then(data => {
@@ -78,7 +79,7 @@ restaurantsModel.create = (req, res, next) => {
 restaurantsModel.addedlist = (req, res, next) => {
 	console.log(res.locals.allFromList);
 	db
-		.manyOrNone("SELECT id,res_id,name,city FROM restaurants")
+		.manyOrNone("SELECT id,res_id,name,city,image FROM restaurants")
 
 		.then(data => {
 			res.locals.allFromList = data;
