@@ -53,7 +53,8 @@ restaurantsModel.create = (req, res, next) => {
 	console.log("from restaurants.Model", req.body);
 	db
 		.manyOrNone(
-			"INSERT INTO restaurants (res_id, name, city, image) VALUES ($1, $2, $3, $4) RETURNING *;",
+			"INSERT INTO restaurants(res_id, name, city, image) VALUES ($1, $2, $3, $4) RETURNING *;",
+
 			[
 				req.body.restaurant_id,
 				req.body.restaurant_name,
@@ -68,6 +69,7 @@ restaurantsModel.create = (req, res, next) => {
 			next();
 		})
 		.catch(error => {
+			alert("already in your dinelist");
 			console.log(
 				"error encountered in restaurantsModel.create. Error:",
 				error
