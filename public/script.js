@@ -29,8 +29,9 @@ $(function() {
 	});
 
 
-	$("#comment").click(function(e) {
+	$(".comment").click(function(e) {
 		//create comment function
+		console.log('from comment')
 		e.preventDefault();
 		const new_comment = $("#text_comment").val();
 		const res_id = $("#text_comment").data("res-id");
