@@ -9,10 +9,13 @@
   </head>
 
   <body id="dine_page">
+    <nav>
+    <a class="navlinks" href="/">Home</a>
+    <a class="navlinks" href="/dinelist/"><img class="navlinks" src="../wishlisticon.png"/>dinelist</h1></a>
+    </nav>
+
     <div class="intro">
       <h1 class="red"> City Foods</h1>
-      <h1>
-       <img src="../wishlisticon.png"/>dinelist</h1>
     </div>
     <div class="grid_contain1">
       {{#listdata}}
@@ -23,9 +26,9 @@
     <ul>
       <li>
         <form>
-          <input class="delete" name="delete" value="delete" type="button">
+         
           <input class="res_id" type="hidden" name="id" value="{{id}}">
-        </form>
+       
             <details>
                 <summary>Add a Review</summary>
                 <form>
@@ -37,7 +40,10 @@
                 </form>
             </details>
             <button class="comments" data-res-id={{res_id}}> View Comments</button>
+
             <div id={{res_id}}></div>
+             <input class="delete" name="delete" value="delete" type="button">
+         </form>
         </li>
     </ul>
     {{/listdata}}

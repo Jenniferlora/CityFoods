@@ -2,11 +2,13 @@
 	margin:0;
 	padding: 0;
 	color:white;
-	background-color:rgb(76,90,105);
+/*	background-color:rgb(76,90,105);*/
+	background-color: rgb(0, 0, 26);
 }
 
 #list_page{
-/*	background-color: darkgrey;*/
+/*	background-color:rgb(76,90,105);
+*/		background-color: rgb(0, 0, 26);
 }
 .grid_contain{
   display: grid;
@@ -64,4 +66,23 @@ margin:10px;
 }
 .faves{
 	margin:20px;
+}
+details{
+	margin:10px;
+}
+nav{
+	background-color: rgb(0, 0, 26);
+	height: 6vh;
+	display: flex;
+	justify-content: flex-end;
+
+}
+.navlinks{
+	background-color: rgb(0, 0, 26);
+	margin-right:10px;
+	margin-top: 5px;
+
+}
+.navimg{
+	background-color: rgb(0, 0, 26);
 }
